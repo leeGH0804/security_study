@@ -1,0 +1,101 @@
+
+# /root/ctf-web/myctf/hansel/templates/hansel/login.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hansel and Gretel</title>
+    <style>
+        body {
+            background-color: #fefae0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .login-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #219ebc;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    {% if success %}
+        <img src="/static/images/hansel-gretel-after.jpg" alt="Hansel and Gretel After">
+    {% else %}
+        <img src="/static/images/hansel-gretel-before.jpg" alt="Hansel and Gretel Before">
+    {% endif %}
+
+    <div class="login-box">
+        <h1>Hansel and Gretel</h1>
+
+        {% if not success %}
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="submit" value="Log In">
+            </form>
+        {% endif %}
+
+        {% if success %}
+            <div class="message">
+                Wow, congratulations!<br>
+                But there's no hint here...<br>
+                We already left it behind somewhere else...
+            </div>
+            <form method="get" action="/logout/">
+                <input type="submit" value="Log Out">
+            </form>
+        {% elif error %}
+            <div class="message" style="color: red;">
+                Login failed. Please try again.
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
