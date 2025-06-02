@@ -1,0 +1,50 @@
+
+# /root/ctf-web/myctf/alibaba/templates/alibaba/index.html
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alibaba's Cave</title>
+    <script>
+        function open_code() {
+            fetch('/api/access')
+                .then(response => response.json())
+                .then(data => {
+                    console.log("token=" + data.token);
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .message {
+            color: red;
+            position: absolute;
+            top: 5%;
+            font-size: 1.8em;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">{{ message }}</div>
+    <img src="{% static 'images/cave-closed.jpg' %}" alt="Closed Cave">
+</body>
+</html>
