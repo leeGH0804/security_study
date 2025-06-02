@@ -1,0 +1,15 @@
+
+# /etc/systemd/system/ctf.service
+
+[Unit]
+Description=Gunicorn instance to serve CTF
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/ctf-web/myctf
+ExecStart=/root/ctf-web/venv/bin/gunicorn --workers 3 --bind unix:/root/ctf-web/myctf.sock myctf.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
