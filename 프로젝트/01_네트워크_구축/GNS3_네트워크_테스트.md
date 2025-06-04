@@ -8,6 +8,8 @@
 > GNS 버전 문제로 VPC의 telnet, http 기능에 제한이 있어 라우터로 대체했습니다.  
 > ASAv에서 http는 이미지 파일 추가 다운로드가 필요하여 테스트는 telnet으로만 했습니다.
 ### ACL
+---
+
 #### 1. Firefox3(192.168.8.1, VPC 대신 라우터로 대체) -> inside(192.168.8.254) : telnet, http 접속  
 <img src="https://github.com/user-attachments/assets/3f3cb8c4-ea25-4e98-bccc-52555caf5d56" width=500 height=300>  
 
@@ -39,6 +41,7 @@
 <img src="https://github.com/user-attachments/assets/e119ac4c-817a-43d4-81d9-981956b6c587" width=500 height=200>  
 
 ## 테스트
+---
 
 ### 평상시
 ---
