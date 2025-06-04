@@ -1,7 +1,7 @@
 ---
 # ACL
 ---
-<img src="https://github.com/user-attachments/assets/54444c56-58f7-414f-8e74-cf8299b26d7e">
+<img src="https://github.com/user-attachments/assets/c7c9d2dc-64f0-49ad-a884-f84313a53a43">
 
 ## Rule
 <img src="https://github.com/user-attachments/assets/d7423734-08c6-416e-bd21-0c213e476ba2">
@@ -35,7 +35,7 @@
 ---
 # HSRP
 ---
-<img src="https://github.com/user-attachments/assets/c049c58f-4232-441f-954b-52f9e97c9d12">
+<img src="https://github.com/user-attachments/assets/93fe3f39-d111-49b1-afd1-26f23cd815ee">
 ## 라우터 설정
 ---
 
@@ -76,10 +76,15 @@
 ---
 # VLAN
 ---
-<img src="https://github.com/user-attachments/assets/3209982b-fe58-4d23-854a-6d9a5bc972cf">
+<img src="https://github.com/user-attachments/assets/900b0c0c-e42d-46d9-b5de-711d9dbe5514">
 
 ---
-## TEST
+## Ping TEST
 ---
 
 ### PC1(192.168.20.66) -> PC4(192.168.20.129)
+<img src="https://github.com/user-attachments/assets/5a150e3e-1bf7-441f-adcb-00eb4deeb2ba" width=500 height=100>
+
+### PC1(192.168.20.66) -> Firefox2(192.168.70.2)
+<img src="https://github.com/user-attachments/assets/21e5d955-7780-4506-84d5-778206dfcc53" width=500 height=100>
+
