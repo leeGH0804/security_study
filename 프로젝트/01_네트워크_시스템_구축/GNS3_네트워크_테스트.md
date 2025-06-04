@@ -1,6 +1,8 @@
 ---
 # ACL
 ---
+<img src="https://github.com/user-attachments/assets/54444c56-58f7-414f-8e74-cf8299b26d7e">
+
 ## Rule
 <img src="https://github.com/user-attachments/assets/d7423734-08c6-416e-bd21-0c213e476ba2">
 
@@ -33,6 +35,7 @@
 ---
 # HSRP
 ---
+<img src="https://github.com/user-attachments/assets/c049c58f-4232-441f-954b-52f9e97c9d12">
 ## 라우터 설정
 ---
 
@@ -69,3 +72,14 @@
 
 #### tracert
 <img src="https://github.com/user-attachments/assets/e26d16f9-23b5-4675-98a2-8a823924daa2" width=500 height=100>  
+
+---
+# VLAN
+---
+<img src="https://github.com/user-attachments/assets/3209982b-fe58-4d23-854a-6d9a5bc972cf">
+
+---
+## TEST
+---
+
+### PC1(192.168.20.66) -> PC4(192.168.20.129)
