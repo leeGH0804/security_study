@@ -37,10 +37,10 @@
 ---
 
 ### R4
-<img src="https://github.com/user-attachments/assets/747516f8-d1e9-45a9-a597-fb3a74e585ff" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/747516f8-d1e9-45a9-a597-fb3a74e585ff" width=500 height=250>  
 
 ### R3
-<img src="https://github.com/user-attachments/assets/e119ac4c-817a-43d4-81d9-981956b6c587" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/e119ac4c-817a-43d4-81d9-981956b6c587" width=500 height=250>  
 
 ---
 ## 테스트
