@@ -4,6 +4,7 @@
 ## Rule
 <img src="https://github.com/user-attachments/assets/d7423734-08c6-416e-bd21-0c213e476ba2">
 
+---
 ## Test
 > GNS 버전 문제로 VPC의 telnet, http 기능에 제한이 있어 라우터로 대체했습니다.  
 > ASAv에서 http는 이미지 파일 추가 다운로드가 필요하여 테스트는 telnet으로만 했습니다.
