@@ -21,10 +21,10 @@
 
 #### 4. webterm1(192.168.24.1, R2 라우터(2.2.2.2)로 대체) - R1(1.1.1.2) : http, telnet 가능  
 
-##### telnet
+**telnet**
 <img src="https://github.com/user-attachments/assets/e5a25c74-078d-4e24-99ff-7bbe886d1e39" width=500 height=300>  
 
-##### http
+**http**
 <img src="https://github.com/user-attachments/assets/a809c977-406a-4149-a120-7fee8173453e" width=500 height=200>
 
 #### 5. webterm2(192.168.16.1) -> PC1(192.168.8.2) : ping 가능  
@@ -42,7 +42,6 @@
 
 ## 테스트
 ---
-
 ### 평상시
 ---
 
@@ -55,6 +54,7 @@
 #### tracert
 <img src="https://github.com/user-attachments/assets/c9d0ddb9-6927-4239-8c2c-08e6f124ace5" width=500 height=100>  
 
+---
 ### 장애 발생 시(f0/0 shutdown)
 ---
 
