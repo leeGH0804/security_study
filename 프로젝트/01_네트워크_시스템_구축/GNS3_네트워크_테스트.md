@@ -36,6 +36,7 @@
 # HSRP
 ---
 <img src="https://github.com/user-attachments/assets/93fe3f39-d111-49b1-afd1-26f23cd815ee">
+
 ## 라우터 설정
 ---
 
