@@ -1,4 +1,4 @@
----
+
 # ACL
 ---
 <img src="https://github.com/user-attachments/assets/c7c9d2dc-64f0-49ad-a884-f84313a53a43">
@@ -35,7 +35,7 @@
 ### 5. webterm2(192.168.16.1) -> PC1(192.168.8.2) : ping 가능  
 <img src="https://github.com/user-attachments/assets/619145f3-3eab-49c8-aef0-c238c5615c00" width=500 height=300>  
 
----
+
 # HSRP
 ---
 <img src="https://github.com/user-attachments/assets/93fe3f39-d111-49b1-afd1-26f23cd815ee">
@@ -78,7 +78,7 @@
 #### tracert
 <img src="https://github.com/user-attachments/assets/e26d16f9-23b5-4675-98a2-8a823924daa2" width=500 height=100>  
 
----
+
 # VLAN
 ---
 <img src="https://github.com/user-attachments/assets/900b0c0c-e42d-46d9-b5de-711d9dbe5514">
