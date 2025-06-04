@@ -8,10 +8,10 @@
 - suninatas.com
 - overthewire.org
 - webhacking.kr
+- DVWA
 - OWASP juice shop
 
 ## 프로젝트
-- 네트워크 구축
 - 네트워크와 시스템 구축
 - DB 애플리케이션 시스템 구축
 - CTF 문제 제작
