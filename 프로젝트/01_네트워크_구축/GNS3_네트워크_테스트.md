@@ -41,23 +41,25 @@
 ## 테스트
 
 ### 평상시
+---
 
 #### R4
-<img src="https://github.com/user-attachments/assets/8c42ba25-e52c-4405-b923-c031cb664d6c" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/8c42ba25-e52c-4405-b923-c031cb664d6c" width=500 height=150>  
 
 #### R3
-<img src="https://github.com/user-attachments/assets/08ce5d9b-2675-4de2-8829-558438446eb4" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/08ce5d9b-2675-4de2-8829-558438446eb4" width=500 height=150>  
 
 #### tracert
-<img src="https://github.com/user-attachments/assets/c9d0ddb9-6927-4239-8c2c-08e6f124ace5" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/c9d0ddb9-6927-4239-8c2c-08e6f124ace5" width=500 height=100>  
 
 ### 장애 발생 시(f0/0 shutdown)
+---
 
 #### R4
-<img src="https://github.com/user-attachments/assets/2f84f2b4-9d3e-4c83-b950-b3a1f0c1edd5" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/2f84f2b4-9d3e-4c83-b950-b3a1f0c1edd5" width=500 height=150>  
 
 #### R3
-<img src="https://github.com/user-attachments/assets/7f6da9ba-155d-4114-b422-88d888a50c8e" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/7f6da9ba-155d-4114-b422-88d888a50c8e" width=500 height=150>  
 
 #### tracert
-<img src="https://github.com/user-attachments/assets/e26d16f9-23b5-4675-98a2-8a823924daa2" width=500 height=200>  
+<img src="https://github.com/user-attachments/assets/e26d16f9-23b5-4675-98a2-8a823924daa2" width=500 height=100>  
