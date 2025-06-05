@@ -1,7 +1,7 @@
 
 # Snort3
 
-<img src="https://github.com/user-attachments/assets/176849ea-ff4c-4cc4-a168-dab09874375d" width=500 height=400>
+<img src="https://github.com/user-attachments/assets/176849ea-ff4c-4cc4-a168-dab09874375d" width=500 height=250>
 
 ## Rule
 
