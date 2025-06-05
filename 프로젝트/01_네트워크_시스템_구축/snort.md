@@ -5,7 +5,7 @@
 
 ## Rule
 
-<img src="https://github.com/user-attachments/assets/f0c39640-1256-4f98-a0ea-1edb27f87436" width=500 height=400>
+<img src="https://github.com/user-attachments/assets/f0c39640-1256-4f98-a0ea-1edb27f87436" width=500 height=350>
 
 ## Test
 
@@ -23,7 +23,7 @@
 
 ### OSSEC(172.16.0.218) -> Rocky(172.16.0.233) : /etc/password command injection
 
-<img src="https://github.com/user-attachments/assets/d2cc6aad-7a19-4cdc-b250-3603b83b6422" width=500 height=50>
+<img src="https://github.com/user-attachments/assets/d2cc6aad-7a19-4cdc-b250-3603b83b6422" width=500 height=30>
 
 ### Kali(172.16.0.60) -> Win(172.16.0.9) : Rand Source Attack
 
