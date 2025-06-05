@@ -29,6 +29,6 @@
 
 <img src="https://github.com/user-attachments/assets/fc3fa2dd-6248-4be0-9a1d-2d2e283e10ab" width=500 height=500>
 
-### Kali(172.16.0.60) -> Rocky(172.16.0.233) : SYN Flag Scanning
+### Kali(172.16.0.60) -> Rocky(172.16.0.233) : SYN Flooding
 
 <img src="https://github.com/user-attachments/assets/f91b607a-a60c-4ed9-b727-97b61a8e7005" width=500 height=500>
