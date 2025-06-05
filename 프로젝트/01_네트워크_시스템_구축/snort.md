@@ -1,11 +1,11 @@
 
 # Snort3
 
-<img src="https://github.com/user-attachments/assets/176849ea-ff4c-4cc4-a168-dab09874375d" width=500 height=500>
+<img src="https://github.com/user-attachments/assets/176849ea-ff4c-4cc4-a168-dab09874375d" width=500 height=400>
 
 ## Rule
 
-<img src="https://github.com/user-attachments/assets/f0c39640-1256-4f98-a0ea-1edb27f87436" width=500 height=500>
+<img src="https://github.com/user-attachments/assets/f0c39640-1256-4f98-a0ea-1edb27f87436" width=500 height=400>
 
 ## Test
 
@@ -19,11 +19,11 @@
 
 ### Rocky(172.16.0.233) -> Win(172.16.0.9) : ping
 
-<img src="https://github.com/user-attachments/assets/cde1686f-bd49-4a7e-bb63-5b00653abe23" width=500 height=500>
+<img src="https://github.com/user-attachments/assets/cde1686f-bd49-4a7e-bb63-5b00653abe23" width=500 height=450>
 
 ### OSSEC(172.16.0.218) -> Rocky(172.16.0.233) : /etc/password command injection
 
-<img src="https://github.com/user-attachments/assets/d2cc6aad-7a19-4cdc-b250-3603b83b6422" width=500 height=100>
+<img src="https://github.com/user-attachments/assets/d2cc6aad-7a19-4cdc-b250-3603b83b6422" width=500 height=50>
 
 ### Kali(172.16.0.60) -> Win(172.16.0.9) : Rand Source Attack
 
