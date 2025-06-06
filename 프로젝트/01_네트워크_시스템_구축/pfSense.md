@@ -3,7 +3,7 @@
 
 ## 연결 확인
 
-<img src="https://github.com/user-attachments/assets/da7db340-e0e8-43af-9a89-d5ea47fc75e4" width=500 height=500>   
+<img src="https://github.com/user-attachments/assets/da7db340-e0e8-43af-9a89-d5ea47fc75e4" width=500 height=500><br></br>
 
 <img src="https://github.com/user-attachments/assets/056185e2-fed0-452a-bb9a-f609e476831d" width=500 height=300>  
 
