@@ -17,7 +17,7 @@
 
 ## Firewall Rule
 
-<img src="https://github.com/user-attachments/assets/4cdc0880-e318-4762-9a14-854df326111c" width=500 height=300>
+<img src="https://github.com/user-attachments/assets/4cdc0880-e318-4762-9a14-854df326111c" width=500 height=200>
 
 ## Services
 
