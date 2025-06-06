@@ -3,7 +3,7 @@
 
 ## 연결 확인
 
-<img src="https://github.com/user-attachments/assets/da7db340-e0e8-43af-9a89-d5ea47fc75e4" width=500 height=500>  
+<img src="https://github.com/user-attachments/assets/da7db340-e0e8-43af-9a89-d5ea47fc75e4" width=500 height=500>   
 
 <img src="https://github.com/user-attachments/assets/056185e2-fed0-452a-bb9a-f609e476831d" width=500 height=300>  
 
@@ -17,11 +17,11 @@
 
 ## Firewall Rule
 
-<img src="https://github.com/user-attachments/assets/4cdc0880-e318-4762-9a14-854df326111c" width=500 height=500>
+<img src="https://github.com/user-attachments/assets/4cdc0880-e318-4762-9a14-854df326111c" width=500 height=300>
 
 ## Services
 
-<img src="https://github.com/user-attachments/assets/71036249-2f5f-43ab-a062-cf9c934d5887" width=500 height=500>
+<img src="https://github.com/user-attachments/assets/71036249-2f5f-43ab-a062-cf9c934d5887" width=500 height=300>
 
 ## Logs
 
