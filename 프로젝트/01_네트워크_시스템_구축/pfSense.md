@@ -17,7 +17,7 @@
 
 ## Firewall Rule
 
-<img src="https://github.com/user-attachments/assets/4cdc0880-e318-4762-9a14-854df326111c" width=500 height=200>
+<img src="https://github.com/user-attachments/assets/4cdc0880-e318-4762-9a14-854df326111c" width=500 height=100>
 
 ## Services
 
@@ -29,4 +29,4 @@
 
 ## Traffic Graph
 
-<img src="https://github.com/user-attachments/assets/e6d9d1d1-6de5-4ace-a59e-64d8b7b1670e" width=500 height=500>
+<img src="https://github.com/user-attachments/assets/e6d9d1d1-6de5-4ace-a59e-64d8b7b1670e" width=500 height=400>
