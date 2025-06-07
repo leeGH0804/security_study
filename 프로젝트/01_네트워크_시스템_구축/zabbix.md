@@ -3,6 +3,9 @@
 
 ## 연결 확인
 
+**Zabbix Server-Rocky Linux**
+**Zabbix Server-Windows**
+
 <img src=https://github.com/user-attachments/assets/ea680be8-33f4-4439-97ce-83553c4f2c0a width=500 height=300>
 
 ## 대시보드
