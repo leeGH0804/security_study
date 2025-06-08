@@ -1,5 +1,7 @@
 
-# Log Analyzer - Agent : Rocky Linux
+# Log Analyzer
+
+- Agent : Rocky Linux
 
 ## Syslog
 
