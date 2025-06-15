@@ -1,0 +1,70 @@
+
+# IP
+
+PMM Server : 222.104.175.215  
+
+DB Server : 118.41.128.87  
+
+Wordpress : 118.45.214.89
+
+# PMM
+
+## PMM 연결
+
+![image](https://github.com/user-attachments/assets/d4c54a3f-c35b-4903-a846-25f9e7f70b3b)
+
+## CPU 정보
+
+![image](https://github.com/user-attachments/assets/1b22a5ed-f672-43a2-9e4b-e58316d08eb8)
+
+## 디스크 정보
+
+![image](https://github.com/user-attachments/assets/011dca59-a531-4e45-abbf-e68dbb0995c4)
+
+## 메모리 정보
+
+![image](https://github.com/user-attachments/assets/1087b753-6957-4e26-92c9-cf99b196e20b)
+
+## 네트워크 트래픽 정보
+
+![image](https://github.com/user-attachments/assets/2afeb88a-1eac-4aed-b41b-1b662675cbfd)
+
+## 프로세스 정보
+
+![image](https://github.com/user-attachments/assets/de452608-81ed-48f9-a147-0ef01eb527c8)
+
+## 비균일 메모리 접근(NUMA) 정보
+
+![image](https://github.com/user-attachments/assets/a374be0e-7175-4ca2-879e-9be41f68e63c)
+
+## DB 서버 정보
+
+![image](https://github.com/user-attachments/assets/72192093-9221-4f55-89ef-b44cfcd6278a)
+
+## Wordpress db 테이블 정보
+
+![image](https://github.com/user-attachments/assets/f3fe8073-07f2-44aa-a327-bc4133af084a)
+
+# Wordpress
+
+![image](https://github.com/user-attachments/assets/572fd61e-988e-43b7-ab9f-67f658908f0a)
+
+# DB
+
+## 입양 비용의 합계 및 평균
+
+![image](https://github.com/user-attachments/assets/121bf4c2-b7b8-42fe-a5e9-6f8b0cf52d97)
+
+## ANIMAL_INS
+
+![image](https://github.com/user-attachments/assets/10de7c3c-728c-4e0b-b2c1-1f1448e12155)
+
+## ANIMAL_OUTS
+
+![image](https://github.com/user-attachments/assets/018455c6-7ca0-4a96-ab61-ae5e98e2d2b2)
+
+# 계정별 권한
+
+![image](https://github.com/user-attachments/assets/a7be4419-afc7-4ec6-8f90-1bc37ea73b55)
+
+
