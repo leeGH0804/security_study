@@ -71,14 +71,14 @@ Wordpress : 118.45.214.89
 
 ## XSS 탐지
 
-![image](https://github.com/user-attachments/assets/b76fbf18-cdee-4c94-b1bc-d23f6b427b98)
+<img src=https://github.com/user-attachments/assets/b76fbf18-cdee-4c94-b1bc-d23f6b427b98 width=500>
 
 ## SQL Injection 탐지지
 
-![image](https://github.com/user-attachments/assets/cfeff5ae-a291-4c2c-bceb-8951500db759)
+<img src=https://github.com/user-attachments/assets/cfeff5ae-a291-4c2c-bceb-8951500db759 width=500>
 
 ## 관리자 경로 접근 탐지
 
-![image](https://github.com/user-attachments/assets/76b3392a-5269-4c06-a6f3-5f1aaa96baea)
+<img src=https://github.com/user-attachments/assets/76b3392a-5269-4c06-a6f3-5f1aaa96baea width=500>
 
 
