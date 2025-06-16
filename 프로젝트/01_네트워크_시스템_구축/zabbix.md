@@ -3,6 +3,8 @@
 
 Zabbix는 네트워크, 서버, 가상머신, 클라우드 서비스 등 IT 인프라의 성능과 가용성을 실시간으로 감시하고 경고하는 오픈소스 모니터링 솔루션입니다.
 
+공식 홈페이지 : https://www.zabbix.com/
+
 ## 연결 확인
 
 **Zabbix Server - Rocky Linux**  
