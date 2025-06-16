@@ -4,7 +4,7 @@
 LogAnalyzer는 수집된 로그 데이터를 웹에서 실시간으로 분석하고 시각화해주는 로그 분석 도구입니다.
 Windows에서는 MonitorWare Agent나 WinSyslog, Linux/Unix에서는 rsyslog를 통해 로그를 수집하며, 다양한 환경에서 효율적인 로그 관리와 모니터링이 가능합니다.
 
-공식 사이트 : https://loganalyzer.adiscon.com/
+공식 홈페이지 : https://loganalyzer.adiscon.com/
 
 - Agent : Rocky Linux
 
