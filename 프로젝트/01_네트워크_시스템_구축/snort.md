@@ -1,6 +1,8 @@
 
 # Snort3
 
+Snort는 오픈소스 기반의 네트워크 침입 탐지 및 예방 시스템(IDS/IPS)으로, 실시간으로 네트워크 트래픽을 분석하고 패킷을 기록하며, 사전 정의된 규칙을 통해 악성 활동을 식별·차단할 수 있습니다.
+
 <img src="https://github.com/user-attachments/assets/176849ea-ff4c-4cc4-a168-dab09874375d" width=500 height=250>
 
 ## Rule
