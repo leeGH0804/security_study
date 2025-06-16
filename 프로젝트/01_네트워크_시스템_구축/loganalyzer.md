@@ -6,7 +6,7 @@ Windows에서는 MonitorWare Agent나 WinSyslog, Linux/Unix에서는 rsyslog를 
 
 공식 홈페이지 : https://loganalyzer.adiscon.com/
 
-- Agent : Rocky Linux
+Agent : Rocky Linux
 
 ## Syslog
 
