@@ -9,6 +9,10 @@ Wordpress : 118.45.214.89
 
 # PMM
 
+Percona Monitoring and Management(PMM)는 MySQL, PostgreSQL, MongoDB 등 데이터베이스 중심의 IT 인프라를 위한 모니터링·관리·관측(Observability) 오픈소스 플랫폼입니다. 이 도구는 단일 대시보드에서 노드 성능, 쿼리 분석(QAN), 실시간 경고, 그리고 백업/복구 기능까지 제공하여, 데이터베이스 상태를 감시하고 병목을 진단하며 효율적으로 운영할 수 있게 지원합니다.
+
+공식 사이트 : https://docs.percona.com/percona-monitoring-and-management//3/index.html
+
 ## PMM 연결
 
 ![image](https://github.com/user-attachments/assets/d4c54a3f-c35b-4903-a846-25f9e7f70b3b)
