@@ -3,6 +3,8 @@
 
 pfSense는 FreeBSD 기반의 방화벽, 라우터, VPN, IDS/IPS 기능을 모두 갖춘 통합형 오픈소스 방화벽이자 라우터 소프트웨어입니다. 물리적 장비나 가상 머신(VM)에 설치하여 보안 네트워크 인프라를 손쉽게 구축할 수 있습니다.
 
+공식 사이트 : https://www.pfsense.org/
+
 ## 연결 확인
 
 <img src="https://github.com/user-attachments/assets/da7db340-e0e8-43af-9a89-d5ea47fc75e4" width=500 height=500>
