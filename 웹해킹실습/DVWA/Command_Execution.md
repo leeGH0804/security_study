@@ -54,12 +54,31 @@ $substitutions = array(
 
 ### 풀이
 
+![image](https://github.com/user-attachments/assets/cef3ec15-cbdc-4d57-956e-6b8c412208cc)
 
+이미지와 같이 특수문자를 이용하여 다중 명령을 실행하려고 하면 ERROR: You have entered an invalid IP 와 같은 오류 메시지가 나타남.
 
 ### 페이지 소스
 
 <img src=https://github.com/user-attachments/assets/13ffe219-aef0-4b78-bc0b-7b2c1d513999 width=600>
 
+$target = stripslashes( $target );
+
+입력한 값(target)에서 \(역슬래시) 값을 제거하고,  
+
+$octet = explode(".", $target);  
+
+.(마침표)를 기준으로 입력한 값을 나눔.  
+
+if ((is_numeric($octet[0])) && (is_numeric($octet[1])) && (is_numeric($octet[2])) && (is_numeric($octet[3])) && (sizeof($octet) == 4)  ) {   
+
+나눈 값들이 숫자인지 확인  
+
+$target = $octet[0].'.'.$octet[1].'.'.$octet[2].'.'.$octet[3];  
+
+나눈 값을 .(마침표)로 이어 붙임.  
+
+is_numeric 이라는 함수 때문에 특수문자를 사용하면 조건에 만족하지 않아 에러 메시지가 출력됨.
 
 
-
+select id from prob_red_dragon where id=''||no>%23' and no=%0a{injection point}
