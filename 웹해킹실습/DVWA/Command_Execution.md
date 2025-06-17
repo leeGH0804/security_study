@@ -48,7 +48,15 @@ $substitutions = array(
 
 따라서, &&(더블 엠퍼센트)와 ;(세미클론)을 제외한 특수 문자를 이용하여 다중 명령 실행 가능.
 
+## Security : high
 
+### 풀이
+
+
+
+### 페이지 소스
+
+<img src=https://github.com/user-attachments/assets/13ffe219-aef0-4b78-bc0b-7b2c1d513999 width=600>
 
 
 
