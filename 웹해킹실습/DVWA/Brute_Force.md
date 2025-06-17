@@ -89,7 +89,7 @@ OWASP ZAP으로 brute force를 실행한 결과 페이로드 값에 password 일
 
 ### 페이지 소스
 
-![image](https://github.com/user-attachments/assets/8547e8b9-8891-4611-946f-1e049e7f54ce)
+<img src=https://github.com/user-attachments/assets/8547e8b9-8891-4611-946f-1e049e7f54ce width=600>
 
 $user = stripslashes( $user );  
 $pass = stripslashes( $pass );  
