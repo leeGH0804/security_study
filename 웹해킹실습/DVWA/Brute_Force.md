@@ -24,7 +24,7 @@ password : password
 
 ### 페이지 소스
 
-![image](https://github.com/user-attachments/assets/fc1852e5-049d-4453-bda0-b9659fef4229)
+<img src=https://github.com/user-attachments/assets/fc1852e5-049d-4453-bda0-b9659fef4229 width=600>
 
 필터 없이 입력값을 받아서 sql injection 공격도 가능  
 
