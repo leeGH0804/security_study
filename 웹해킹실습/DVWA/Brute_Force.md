@@ -24,8 +24,18 @@ password : password
 
 ### 페이지 소스
 
-![image](https://github.com/user-attachments/assets/48c0354e-f332-4130-8149-19f5548f546f)
+![image](https://github.com/user-attachments/assets/fc1852e5-049d-4453-bda0-b9659fef4229)
 
-필터 없이 입력값을 받아서 sql injection 공격도 가능
+필터 없이 입력값을 받아서 sql injection 공격도 가능  
+
+SELECT * FROM `users` WHERE user='$user' AND password='$pass';  
+
+SELECT * FROM `users` WHERE user='admin' -- ' AND password='$pass'; 로 입력되어 -- 뒤에 부분은 주석처리됨.  
+
+따라서, SELECT * FROM `users` WHERE user='admin' -- 되어 user가 admin에 해당하는 모든 값을 조회
+
+![image](https://github.com/user-attachments/assets/fc27cae2-8f5c-4c02-9ece-78353e8bdbb0)
+
+로그인 성공!
 
 ## Security Level : Medium
