@@ -96,7 +96,8 @@ PHP 홈페이지에서 is_numeric 함수에 대해 찾아보면 Returns true if 
 
 16진수(Hex)도 입력하면 통과됨. 근데 10진수로 변환하므로 command injection으로 이어지기는 어려워보임.
 
-![image](https://github.com/user-attachments/assets/dff46931-f49a-4951-bbd2-3a3f35ae7479)
+![image](https://github.com/user-attachments/assets/6bde36fc-7933-47b2-b9ea-d4e204e6fbb2)
+
 
 .(마침표)로 나눴을 때 제일 앞의 숫자에 공백을 넣어도 ping 함수가 실행됨. 반면, 첫번째 이외에 숫자에는 공백을 넣으면 오류 메세지를 포함해서 아무런 출력이 되지 않음.  
 
@@ -116,7 +117,17 @@ foreach ($tests as $element) {
  
 코드에서 '1337e0' is numeric 로 보아 지수 표현을 허용하는 것을 알 수 있음. 그래서 지수 표현식 + 형 변환 과정(1.234e+5)을 통해 특정 조건에 맞는 숫자를 입력하여 우회할 수 있음.
 
+## 대응방안
 
+Command Injection에 대응하기 위해서 $cmd = shell_exec( 'ping  ' . $target ); 코드처럼 shell_exec 와 같은 쉘 명령어는 사용 지양. 
+
+만약 사용한다면 특수문자를 필터링하거나 특정 문자열만 허용하는 등 입력값 검증 후 사용
+
+is_numeric, escapeshellarg 함수 등으로 입력값 검증.
+
+※ escapeshellarg : 사용자 입력을 안전하게 쉘 명령어에 전달할 수 있도록 문자열을 이스케이프 처리해주는 PHP 함수
+
+https://www.php.net/manual/en/function.escapeshellarg.php
 
 
 
