@@ -42,7 +42,6 @@ Gmail을 통해 링크를 걸어 메일 전송
 같은 브라우저에 DVWA에 로그인(Security Level:low로 설정)
 
 ![image](https://github.com/user-attachments/assets/4d5232a1-6bf6-481e-95a0-5fbfdf2a208c)
-![image](https://github.com/user-attachments/assets/4d5232a1-6bf6-481e-95a0-5fbfdf2a208c)
 
 '여기' 를 클릭하면 비밀번호 변경 페이지로 이동하면서 비밀번호 변경
 
@@ -68,13 +67,46 @@ GET 방식은 URL에 붙여서 데이터를 보내기 때문에 비밀번호의 
 
 ### 풀이
 
+![image](https://github.com/user-attachments/assets/a6fda992-04e1-4ac7-bad0-1fd28d4a8e61)
 
+비밀번호 변경을 시도했으니 php버전 차이로 인해 eregi() 함수가 실행이 되지 않는 관계로 페이지 소스 분석만
 
 ### 페이지 소스
 
+![image](https://github.com/user-attachments/assets/88a7962e-a46b-44b8-8fa5-d2424c17cd9a)
 
+if ( eregi ( "127.0.0.1", $_SERVER['HTTP_REFERER'] ) ){    → HTTP 헤더에 Referer 값에 127.0.0.1 이 있는지 여부 확인
 
+![image](https://github.com/user-attachments/assets/90b367e7-fc87-4903-8b6b-c557af6e384e)
 
+Security Level를 low로 바꾸고 비밀번호를 변경한 뒤 확인해보니 referer에는 url 주소 값이 입력되어 있음.
+
+Security Level : low 와 비교했을 때 외부에서 CSRF 공격을 차단하기 위한 대책으로 이와 같은 방식을 사용
+
+그러나 프록시로 잡은 뒤 Referer 값을 위조하여 전송하거나 같은 웹사이트 내 다른 게시판을 통해 CSRF 공격이 가능할 수 있음.
+
+## Security Level : high
+
+### 풀이
+
+![image](https://github.com/user-attachments/assets/4fda246a-2cee-41a7-8098-376f95d51d64)
+
+비밀번호를 변경하는데 있어서 현재 비밀번호가 필요
+
+CSRF는 현재 비밀번호가 모르는 상태에서도 공격이 가능한 방식
+
+현재 비밀번호를 알고 있다면 CSRF 공격을 할 필요가 없음
+
+이러한 상황에서는 GET 방식을 사용하더라도 현재 비밀번호를 확인하는 과정을 거치기 때문에 CSRF 공격에 대응 가능
+
+### 페이지 소스
+
+![image](https://github.com/user-attachments/assets/cb684aac-4cad-4610-8a4b-c9e64a194097)
+
+$pass_curr = $_GET['password_current'];   → 현재의 비밀번호를 입력받음
+
+$pass_curr = stripslashes( $pass_curr );
+$pass_curr = mysql_real_escape_string( $pass_curr );   → SQL Injection 공격 방지
 
 
 
