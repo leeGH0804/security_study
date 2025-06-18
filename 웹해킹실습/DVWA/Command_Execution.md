@@ -62,21 +62,13 @@ $substitutions = array(
 
 <img src=https://github.com/user-attachments/assets/13ffe219-aef0-4b78-bc0b-7b2c1d513999 width=600>
 
-$target = stripslashes( $target );
+$target = stripslashes( $target );   → 입력한 값(target)에서 \(역슬래시) 값을 제거하고,  
 
-입력한 값(target)에서 \(역슬래시) 값을 제거하고,  
+$octet = explode(".", $target);   → .(마침표)를 기준으로 입력한 값을 나눔.  
 
-$octet = explode(".", $target);  
+if ((is_numeric($octet[0])) && (is_numeric($octet[1])) && (is_numeric($octet[2])) && (is_numeric($octet[3])) && (sizeof($octet) == 4)  ) {     → 나눈 값들이 숫자인지 확인  
 
-.(마침표)를 기준으로 입력한 값을 나눔.  
-
-if ((is_numeric($octet[0])) && (is_numeric($octet[1])) && (is_numeric($octet[2])) && (is_numeric($octet[3])) && (sizeof($octet) == 4)  ) {   
-
-나눈 값들이 숫자인지 확인  
-
-$target = $octet[0].'.'.$octet[1].'.'.$octet[2].'.'.$octet[3];  
-
-나눈 값을 .(마침표)로 이어 붙임.  
+$target = $octet[0].'.'.$octet[1].'.'.$octet[2].'.'.$octet[3];    → 나눈 값을 .(마침표)로 이어 붙임.  
 
 is_numeric 이라는 함수 때문에 특수문자를 사용하면 조건에 만족하지 않아 에러 메시지가 출력됨.
 
