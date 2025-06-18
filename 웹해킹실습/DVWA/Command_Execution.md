@@ -80,5 +80,44 @@ $target = $octet[0].'.'.$octet[1].'.'.$octet[2].'.'.$octet[3];
 
 is_numeric 이라는 함수 때문에 특수문자를 사용하면 조건에 만족하지 않아 에러 메시지가 출력됨.
 
+※ is_numeric 우회
 
-select id from prob_red_dragon where id=''||no>%23' and no=%0a{injection point}
+is_numeric 함수의 결과가 true 값이 나와야 $cmd = shell_exec( 'ping  ' . $target ); 코드가 실행될 수 있음.  
+
+그래서 우회할 수 있는지 여부에 대해 알기 위해 is_numeric 함수에 대해 조사.  
+
+https://www.php.net/manual/en/function.is-numeric.php  
+
+PHP 홈페이지에서 is_numeric 함수에 대해 찾아보면 Returns true if value is a number or a **numeric string**, false otherwise. 라고 나옴.
+
+**테스트**
+
+![image](https://github.com/user-attachments/assets/87d67559-b701-4413-9606-eed916990456)
+
+16진수(Hex)도 입력하면 통과됨. 근데 10진수로 변환하므로 command injection으로 이어지기는 어려워보임.
+
+![image](https://github.com/user-attachments/assets/dff46931-f49a-4951-bbd2-3a3f35ae7479)
+
+.(마침표)로 나눴을 때 제일 앞의 숫자에 공백을 넣어도 ping 함수가 실행됨. 반면, 첫번째 이외에 숫자에는 공백을 넣으면 오류 메세지를 포함해서 아무런 출력이 되지 않음.  
+
+예를 들어, 12. 12.12.12를 입력하면 ping 12. 12.12.12 이 되어 함수 실행에 오류가 발생해 아무런 출력이 되지 않는 것으로 보임.  
+
+is_numeric 함수로 인해 ;(세미클론)과 같은 특수문자나 알파벳이 필터링되어 대부분의 command injection 공격을 차단될 것으로 보임.
+
+다만, PHP 홈페이지에서 is_numeric 예제 중에
+
+foreach ($tests as $element) {
+    if (is_numeric($element)) {
+        echo var_export($element, true) . " is numeric", PHP_EOL;
+    } else {
+        echo var_export($element, true) . " is NOT numeric", PHP_EOL;
+    }
+}
+ 
+코드에서 '1337e0' is numeric 로 보아 지수 표현을 허용하는 것을 알 수 있음. 그래서 지수 표현식 + 형 변환 과정(1.234e+5)을 통해 특정 조건에 맞는 숫자를 입력하여 우회할 수 있음.
+
+
+
+
+
+
