@@ -69,7 +69,7 @@ GET 방식은 URL에 붙여서 데이터를 보내기 때문에 비밀번호의 
 
 ![image](https://github.com/user-attachments/assets/a6fda992-04e1-4ac7-bad0-1fd28d4a8e61)
 
-비밀번호 변경을 시도했으니 php버전 차이로 인해 eregi() 함수가 실행이 되지 않는 관계로 페이지 소스 분석만
+비밀번호 변경을 시도했으니 php버전 차이로 인해 eregi() 함수가 실행이 되지 않는 관계로 페이지 소스 분석만 함.
 
 ### 페이지 소스
 
@@ -108,5 +108,17 @@ $pass_curr = $_GET['password_current'];   → 현재의 비밀번호를 입력�
 $pass_curr = stripslashes( $pass_curr );
 $pass_curr = mysql_real_escape_string( $pass_curr );   → SQL Injection 공격 방지
 
+## 대응방안
 
+CSRF토큰 등을 사용하여 웹 사이트에 사용자 입력 값이 저장되는 페이지는 요청이 일회성이 될 수 있도록 설계
+
+사용 중인 프레임워크에 기본적으로 제공되는 CSRF 보호 기능 사용
+
+사용자가 정상적인 프로세스를 통해 요청하였는지 HTTP 헤더의 Referer 검증 로직 구현(eregi(), preg_match() 함수 사용)
+
+정상적인 요청(Request)과 비정상적인 요청(Request)를 구분할 수 있도록 Hidden Form을 사용하여 임의의 암호화된 토큰(세션 ID, Timestamp, nonce 등)을 추가하고 이 토큰을 검증하도록 설계
+
+HTML이나 자바스크립트에 해당되는 태그 사용(<script>, <img onerror=...> 등)을 사전에 제한하고, 서버 단에서 사용자 입력 값에 대한 필터링 구현
+
+HTML Editor 사용으로 인한 상기사항 조치 불가 시, 서버 사이드/서블릿/DAO(Data Access Object) 영역에서 허용된 태그만 통과시키고 나머지는 제거하거나 escape 조치하도록 설계
 
