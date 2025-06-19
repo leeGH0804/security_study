@@ -111,15 +111,20 @@ foreach ($tests as $element) {
 
 ## 대응방안
 
-Command Injection에 대응하기 위해서 $cmd = shell_exec( 'ping  ' . $target ); 코드처럼 shell_exec 와 같은 쉘 명령어는 사용 지양. 
+웹 방화벽(WAF)에 모든 사용자 입력 값을 대상으로 악용될 수 있는 특수문자("&", "|", ";", "`" 등), 특수 구문(cat, ls, rm, ping, curl, 등) 등을 필터링 할 수 있도록 규칙 적용
 
-만약 사용한다면 특수문자를 필터링하거나 특정 문자열만 허용하는 등 입력값 검증 후 사용
+애플리케이션은 운영체제로부터 명령어를 직접적으로 호출하지 않도록 구현(shell_exec 와 같은 쉘 명령어는 사용 지양)
 
-is_numeric, escapeshellarg 함수 등으로 입력값 검증.
+명령어를 직접 호출하는 것이 필요한 경우에는, 데이터가 OS의 명령어 해석기에 전달되기 전에 is_numeric, escapeshellarg 함수 등으로 입력 값을 검증/확인하도록 구현
 
 ※ escapeshellarg : 사용자 입력을 안전하게 쉘 명령어에 전달할 수 있도록 문자열을 이스케이프 처리해주는 PHP 함수
 
 https://www.php.net/manual/en/function.escapeshellarg.php
+
+입력 값에 대한 파라미터 데이터의 "&", "|", ";", "`" 문자에 대한 필터링 처리
+
+
+
 
 
 
