@@ -75,15 +75,15 @@ $getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";   → 
 
 ![image](https://github.com/user-attachments/assets/afed916d-53b8-4b99-b063-454a254a3ddd)
 
-' or 1=1 # 를 입력하니 위와 같은 오류 메시지가 나타남. 오류 메시지를 읽어보면 '(싱글 쿼터) 앞에 \(백슬래시)가 생긴 것으로 보아 ysql_real_escape_string() 함수를 사용했음을 추측 가능
+' or 1=1 # 를 입력하니 위와 같은 오류 메시지가 나타남. 오류 메시지를 읽어보면 '(싱글 쿼트) 앞에 \(백슬래시)가 생긴 것으로 보아 ysql_real_escape_string() 함수를 사용했음을 추측 가능
 
 ![image](https://github.com/user-attachments/assets/0612163f-65c5-4be4-8030-c1f541183344)
 
-'(싱글 쿼터)와 같은 특수 문자를 사용하지 않고 1 or 1=1 를 입력했더니 모든 유저 정보가 나타남
+'(싱글 쿼트)와 같은 특수 문자를 사용하지 않고 1 or 1=1 를 입력했더니 모든 유저 정보가 나타남
 
 ![image](https://github.com/user-attachments/assets/629a9c4b-077e-4585-b88d-dc7928c615c1)
 
-마찬가지로, '(싱글 쿼터) 없이 1 union select user,password from users 를 입력했더니 유저명과 비밀번호 정보가 나타남.
+마찬가지로, '(싱글 쿼트) 없이 1 union select user,password from users 를 입력했더니 유저명과 비밀번호 정보가 나타남.
 
 ### 페이지 소스
 
@@ -91,7 +91,7 @@ $getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";   → 
 
 $id = mysql_real_escape_string($id);   → 특수문자 앞에 \(백슬래시) 추가
 
-mysql_real_escape_string() 함수로 백슬래시를 붙여 '(싱글 쿼터)를 사용하는 SQL Injection 공격에 대해서는 대응할 수 있지만 사용하지 않는 공격은 대응하지 못함.
+mysql_real_escape_string() 함수로 백슬래시를 붙여 '(싱글 쿼트)를 사용하는 SQL Injection 공격에 대해서는 대응할 수 있지만 사용하지 않는 공격은 대응하지 못함.
 
 ## Security Level : high
 
@@ -117,7 +117,7 @@ if (is_numeric($id)){    → id 입력값이 숫자인 경우만 처리
 
 is_numeric와 같이 SQL 쿼리에 사용되는 문자열의 유효성을 검증하는 로직 구현
 
-'(싱글 쿼터), ;(세미클론), --(더블 대시), #(해시), /* */(슬래시 에스터리스크)와 같은 특수문자를 사용자 입력 값으로 지정 금지
+'(싱글 쿼트), ;(세미클론), --(더블 대시), #(해시), /* */(슬래시 에스터리스크)와 같은 특수문자를 사용자 입력 값으로 지정 금지
 
 Dynamic SQL 구문(ex. $getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";) 사용을 지양하며 preg_match() 함수와 같은 파라미터에 문자열 검사 필수적용
 
