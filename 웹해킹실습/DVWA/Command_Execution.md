@@ -62,25 +62,25 @@ $substitutions = array(
 
 <img src=https://github.com/user-attachments/assets/13ffe219-aef0-4b78-bc0b-7b2c1d513999 width=600>
 
-$target = stripslashes( $target );   → 입력한 값(target)에서 \(역슬래시) 값을 제거하고,  
+$target = stripslashes( $target );   → 입력한 값(target)에서 \(백슬래시) 값을 제거하고,  
 
-$octet = explode(".", $target);   → .(마침표)를 기준으로 입력한 값을 나눔.  
+$octet = explode(".", $target);   → .(닷)를 기준으로 입력한 값을 나눔.  
 
 if ((is_numeric($octet[0])) && (is_numeric($octet[1])) && (is_numeric($octet[2])) && (is_numeric($octet[3])) && (sizeof($octet) == 4)  ) {     → 나눈 값들이 숫자인지 확인  
 
-$target = $octet[0].'.'.$octet[1].'.'.$octet[2].'.'.$octet[3];    → 나눈 값을 .(마침표)로 이어 붙임.  
+$target = $octet[0].'.'.$octet[1].'.'.$octet[2].'.'.$octet[3];    → 나눈 값을 .(닷)로 이어 붙임.  
 
-is_numeric 이라는 함수 때문에 특수문자를 사용하면 조건에 만족하지 않아 에러 메시지가 출력됨.
+is_numeric() 이라는 함수 때문에 특수문자를 사용하면 조건에 만족하지 않아 에러 메시지가 출력됨.
 
-※ is_numeric 우회
+※ is_numeric() 우회
 
-is_numeric 함수의 결과가 true 값이 나와야 $cmd = shell_exec( 'ping  ' . $target ); 코드가 실행될 수 있음.  
+is_numeric() 함수의 결과가 true 값이 나와야 $cmd = shell_exec( 'ping  ' . $target ); 코드가 실행될 수 있음.  
 
-그래서 우회할 수 있는지 여부에 대해 알기 위해 is_numeric 함수에 대해 조사.  
+그래서 우회할 수 있는지 여부에 대해 알기 위해 is_numeric() 함수에 대해 조사.  
 
 https://www.php.net/manual/en/function.is-numeric.php  
 
-PHP 홈페이지에서 is_numeric 함수에 대해 찾아보면 Returns true if value is a number or a **numeric string**, false otherwise. 라고 나옴.
+PHP 홈페이지에서 is_numeric() 함수에 대해 찾아보면 Returns true if value is a number or a **numeric string**, false otherwise. 라고 나옴.
 
 **테스트**
 
@@ -91,11 +91,11 @@ PHP 홈페이지에서 is_numeric 함수에 대해 찾아보면 Returns true if 
 ![image](https://github.com/user-attachments/assets/6bde36fc-7933-47b2-b9ea-d4e204e6fbb2)
 
 
-.(마침표)로 나눴을 때 제일 앞의 숫자에 공백을 넣어도 ping 함수가 실행됨. 반면, 첫번째 이외에 숫자에는 공백을 넣으면 오류 메세지를 포함해서 아무런 출력이 되지 않음.  
+.(닷)로 나눴을 때 제일 앞의 숫자에 공백을 넣어도 ping 명령어가 실행됨. 반면, 첫번째 이외에 숫자에는 공백을 넣으면 오류 메세지를 포함해서 아무런 출력이 되지 않음.  
 
-예를 들어, 12. 12.12.12를 입력하면 ping 12. 12.12.12 이 되어 함수 실행에 오류가 발생해 아무런 출력이 되지 않는 것으로 보임.  
+예를 들어, 12. 12.12.12를 입력하면 ping 12. 12.12.12 이 되어 명령어 실행에 오류가 발생해 아무런 출력이 되지 않는 것으로 보임.  
 
-is_numeric 함수로 인해 ;(세미클론)과 같은 특수문자나 알파벳이 필터링되어 대부분의 command injection 공격을 차단될 것으로 보임.
+is_numeric() 함수로 인해 ;(세미클론)과 같은 특수문자나 알파벳이 필터링되어 대부분의 command injection 공격을 차단될 것으로 보임.
 
 다만, PHP 홈페이지에서 is_numeric 예제 중에
 
@@ -115,9 +115,9 @@ foreach ($tests as $element) {
 
 애플리케이션은 운영체제로부터 명령어를 직접적으로 호출하지 않도록 구현(shell_exec 와 같은 쉘 명령어는 사용 지양)
 
-명령어를 직접 호출하는 것이 필요한 경우에는, 데이터가 OS의 명령어 해석기에 전달되기 전에 is_numeric, escapeshellarg 함수 등으로 입력 값을 검증/확인하도록 구현
+명령어를 직접 호출하는 것이 필요한 경우에는, 데이터가 OS의 명령어 해석기에 전달되기 전에 is_numeric(), escapeshellarg() 함수 등으로 입력 값을 검증/확인하도록 구현
 
-※ escapeshellarg : 사용자 입력을 안전하게 쉘 명령어에 전달할 수 있도록 문자열을 이스케이프 처리해주는 PHP 함수
+※ escapeshellarg() : 사용자 입력을 안전하게 쉘 명령어에 전달할 수 있도록 문자열을 이스케이프 처리해주는 PHP 함수
 
 https://www.php.net/manual/en/function.escapeshellarg.php
 
