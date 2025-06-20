@@ -57,7 +57,7 @@ Payload값이 password일 때 Length 값이 5053으로 다르다는 것을 확�
 $user = mysql_real_escape_string( $user );   
 $pass = mysql_real_escape_string( $pass ); 추가됨  
 
-mysql_real_escape_string : 특수 문자열을 이스케이프하는 함수  
+mysql_real_escape_string() : 특수 문자열을 이스케이프하는 함수  
 
 $pass = md5( $pass ); : 입력받은 비밀번호를 md5로 암호화하여 조회
 
@@ -73,11 +73,11 @@ SELECT * FROM `users` WHERE user='admin\' -- ' AND password='$pass'; 와 같이 
 
 %a1'를 입력하면 %a1\'이 되고, %a1%5c%27이 됨. 멀티바이트를 사용하는 언어셋 환경에서는 %a1%5c를 하나의 문자로 보아 이 둘을 묶음. 그렇게 되면 이스케이프 문자는 없어지고 '만 남게됨.
 
-이를 이용하여 %a1' or 1=1 # 를 입력하여 mysql_real_escape_string 함수를 우회할 수 있음.
+이를 이용하여 %a1' or 1=1 # 를 입력하여 mysql_real_escape_string() 함수를 우회할 수 있음.
 
 ※ 멀티바이트를 사용하는 언어셋 환경
 
-다양한 언어의 문자를 표현하기 위해 1바이트 이상을 사용하는 문자 인코딩 방식. 멀티바이트 문자셋에는 '(작은 따옴표), \(역슬래시) 와 같은 특수문자가 한 글자의 일부로 들어갈 수 있음.  
+다양한 언어의 문자를 표현하기 위해 1바이트 이상을 사용하는 문자 인코딩 방식. 멀티바이트 문자셋에는 '(싱글 쿼트), \(백슬래시) 와 같은 특수문자가 한 글자의 일부로 들어갈 수 있음.  
 
 힌트가 되는 함수 : mb_convert_encoding()
 
@@ -96,13 +96,13 @@ OWASP ZAP으로 brute force를 실행한 결과 페이로드 값에 password 일
 $user = stripslashes( $user );  
 $pass = stripslashes( $pass );  
 
-stripslashes : 백슬래시 제거하는 함수
+stripslashes() : 백슬래시 제거하는 함수
 
-구버전 php의 기능 중 하나인 magic_quotes_gpc는 특수문자 앞에 자동으로 \(역슬래시)를 붙여주는 기능
+구버전 php의 기능 중 하나인 magic_quotes_gpc는 특수문자 앞에 자동으로 \(백슬래시)를 붙여주는 기능
 
 앞에서 언급한 것처럼 멀티바이트를 사용하는 언어셋 환경의 경우 이를 우회할 수 있고 그대로 적용된다면 SQL이 정상적으로 작동하지 않을 가능성이 있음.
 
-그래서 원래의 입력값으로 데이터를 복구하기 위해 stripslashes로 \(역슬래시)를 지워줌.  
+그래서 원래의 입력값으로 데이터를 복구하기 위해 stripslashes로 \(백슬래시)를 지워줌.  
 
 그리고 mysql_real_escape_string()로 SQL 기준으로 이스케이프 처리를 다시 함.  
 
