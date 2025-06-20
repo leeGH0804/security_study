@@ -126,4 +126,6 @@ Dynamic SQL 구문(ex. $getid = "SELECT first_name, last_name FROM users WHERE u
 웹 방화벽(WAF)에 인젝션 공격 관련 룰 설정
 
 
+## SQL Injection(Blind)
 
+$num = @mysql_numrows($result);    → 오류 메시지를 숨김
