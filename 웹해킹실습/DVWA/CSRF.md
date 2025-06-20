@@ -53,9 +53,9 @@ Gmail을 통해 링크를 걸어 메일 전송
 
 <img src=https://github.com/user-attachments/assets/065ab36b-3a50-4185-b75c-cb1a41f8c8f7 width=600>
 
-페이지 소스를 확인해보면 변경할 비밀번호를 GET 방식으로 받고 입력된 값을 mysql_real_escape_string 함수로 한번 필터링하고 변경
+페이지 소스를 확인해보면 변경할 비밀번호를 GET 방식으로 받고 입력된 값을 mysql_real_escape_string() 함수로 한번 필터링하고 변경
 
-mysql_real_escape_string 는 특수문자 앞에 \(역슬래시)를 붙여 이스케이프하기 위한 함수로 SQL Injection 공격 방지 위해 사용
+mysql_real_escape_string() 는 특수문자 앞에 \(백슬래시)를 붙여 이스케이프하기 위한 함수로 SQL Injection 공격 방지 위해 사용
 
 GET 방식은 URL에 붙여서 데이터를 보내기 때문에 비밀번호의 변경과 같이 보안이 중요한 기능에는 적절한 방식이 아님
 
