@@ -73,24 +73,57 @@ $getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";   → 
 
 ### 풀이
 
+![image](https://github.com/user-attachments/assets/afed916d-53b8-4b99-b063-454a254a3ddd)
 
+' or 1=1 # 를 입력하니 위와 같은 오류 메시지가 나타남. 오류 메시지를 읽어보면 '(싱글 쿼터) 앞에 \(백슬래시)가 생긴 것으로 보아 ysql_real_escape_string() 함수를 사용했음을 추측 가능
+
+![image](https://github.com/user-attachments/assets/0612163f-65c5-4be4-8030-c1f541183344)
+
+'(싱글 쿼터)와 같은 특수 문자를 사용하지 않고 1 or 1=1 를 입력했더니 모든 유저 정보가 나타남
+
+![image](https://github.com/user-attachments/assets/629a9c4b-077e-4585-b88d-dc7928c615c1)
+
+마찬가지로, '(싱글 쿼터) 없이 1 union select user,password from users 를 입력했더니 유저명과 비밀번호 정보가 나타남.
 
 ### 페이지 소스
 
+<img src=https://github.com/user-attachments/assets/fa9931af-64d1-41d0-8de1-9241a648ff04 width=600>
 
+$id = mysql_real_escape_string($id);   → 특수문자 앞에 \(백슬래시) 추가
+
+mysql_real_escape_string() 함수로 백슬래시를 붙여 '(싱글 쿼터)를 사용하는 SQL Injection 공격에 대해서는 대응할 수 있지만 사용하지 않는 공격은 대응하지 못함.
 
 ## Security Level : high
 
 ### 풀이
 
+![image](https://github.com/user-attachments/assets/f2b8f629-dc0b-43e1-bcaf-59ba5bdfa2eb)
 
+1 or 1=1를 입력하여 Security Level: medium 과 동일한 시도를 했으나, 페이지에 표시되는 오류 메시지나 동작상의 변화 없음
 
 ### 페이지 소스
 
+<img src=https://github.com/user-attachments/assets/8a4ff30b-4201-4df4-9f36-e4bece30f59c width=600>
 
+$id = stripslashes($id);   → php의 magic_quotes_gpc 기능 등으로 생긴 \(백슬래시)를 지움
 
+if (is_numeric($id)){    → id 입력값이 숫자인 경우만 처리
 
+입력값이 숫자형으로 제한되어 있기 때문에 select, or, insert, update 등 SQL 구문에 사용되는 명령어들을 포함한 문자열 입력이 필터링
 
+일반적인 SQL Injection 공격이 적용되기 어렵고, 취약점을 활용하기 위한 추가적인 우회 기법이 필요
+
+## 대응 방안
+
+is_numeric와 같이 SQL 쿼리에 사용되는 문자열의 유효성을 검증하는 로직 구현
+
+'(싱글 쿼터), ;(세미클론), --(더블 대시), #(해시), /* */(슬래시 에스터리스크)와 같은 특수문자를 사용자 입력 값으로 지정 금지
+
+Dynamic SQL 구문(ex. $getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";) 사용을 지양하며 preg_match() 함수와 같은 파라미터에 문자열 검사 필수적용
+
+시스템에서 제공하는 에러 메시지 및 DBMS에서 제공하는 에러 코드가 노출되지 않도록 예외처리
+
+웹 방화벽(WAF)에 인젝션 공격 관련 룰 설정
 
 
 
