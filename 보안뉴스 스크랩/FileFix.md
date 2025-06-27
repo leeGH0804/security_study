@@ -11,7 +11,7 @@
 
 클립보드 복사를 하도록 유도하는 웹페이지
 
-![image](https://github.com/user-attachments/assets/f95747a7-0e00-48f4-9926-f3f48a4e1766)
+<img src=https://github.com/user-attachments/assets/f95747a7-0e00-48f4-9926-f3f48a4e1766 width=600>
 
 버튼 클릭 시 알림이 나타나면서 파일 탐색기에 복사한 내용을 붙여넣도록 다음 행동 유도
 
