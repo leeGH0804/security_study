@@ -985,9 +985,3 @@ Section 비교를 통해 바이너리 수준에서도 이를 재확인했습니�
   설명하는 분석을 수행했습니다.
 
 ---
-
-<div align="center">
-
-🇰🇷 한국어 보고서 — 📄 [English version available here](REPORT.md)
-
-</div>
