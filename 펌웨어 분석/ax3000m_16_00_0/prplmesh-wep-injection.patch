@@ -1,6 +1,17 @@
+# Usage: from the prplMesh repo root, after `git clone
+# https://gitlab.com/prpl-foundation/prplmesh/prplMesh.git`, try in order:
+#   git apply /path/to/this/file
+#   patch -p1 < /path/to/this/file
+# If both fail (likely -- this patch uses a function-name marker instead of
+# real line numbers, since exact line numbers drift across prplMesh
+# versions), open controller/src/beerocks/bml/bml.cpp yourself, search for
+# "WSC_ENCR_AES" inside bml_set_wifi_credentials(), and make the same
+# 3-lines-to-2-lines change shown below by hand. Verify with:
+#   grep -n "WSC_ENCR_WEP" controller/src/beerocks/bml/bml.cpp
+# See analysis/REAL-HARDWARE-VERIFICATION-GUIDE.md section 3-3-보충 for full context.
 --- a/controller/src/beerocks/bml/bml.cpp
 +++ b/controller/src/beerocks/bml/bml.cpp
-@@ int bml_set_wifi_credentials(...)
+@@ -3,7 +3,5 @@ int bml_set_wifi_credentials(...)
      if (network_key) {
          wifi_credentials.network_key = network_key;
 -        wifi_credentials.authentication_type =
