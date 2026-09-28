@@ -1,0 +1,12 @@
+--- a/controller/src/beerocks/bml/bml.cpp
++++ b/controller/src/beerocks/bml/bml.cpp
+@@ int bml_set_wifi_credentials(...)
+     if (network_key) {
+         wifi_credentials.network_key = network_key;
+-        wifi_credentials.authentication_type =
+-            add_sae ? WSC::eWscAuth(WSC::eWscAuth::WSC_AUTH_WPA2PSK | WSC::eWscAuth::WSC_AUTH_SAE)
+-                    : WSC::eWscAuth::WSC_AUTH_WPA2PSK;
+-        wifi_credentials.encryption_type = WSC::eWscEncr::WSC_ENCR_AES;
++        wifi_credentials.authentication_type = WSC::eWscAuth::WSC_AUTH_OPEN;  // CMDI-01: AuthMode는 Open(1)이면 통과
++        wifi_credentials.encryption_type = WSC::eWscEncr::WSC_ENCR_WEP;      // CMDI-01: 반드시 WEP(2)이어야 취약 분기를 탐
+     } else {
