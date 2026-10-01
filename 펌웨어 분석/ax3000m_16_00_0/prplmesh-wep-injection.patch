@@ -11,7 +11,7 @@
 # See analysis/REAL-HARDWARE-VERIFICATION-GUIDE.md section 3-3-보충 for full context.
 --- a/controller/src/beerocks/bml/bml.cpp
 +++ b/controller/src/beerocks/bml/bml.cpp
-@@ -3,7 +3,5 @@ int bml_set_wifi_credentials(...)
+@@ -258,7 +258,5 @@ int bml_set_wifi_credentials(...)
      if (network_key) {
          wifi_credentials.network_key = network_key;
 -        wifi_credentials.authentication_type =
