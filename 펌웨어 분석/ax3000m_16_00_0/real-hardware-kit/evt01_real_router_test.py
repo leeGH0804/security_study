@@ -160,10 +160,14 @@ def main():
     print("subscribe reply:", first)
     print("NOTIFY request line (bytes):", line[:120])
     clean = bool(re.fullmatch(rb"NOTIFY /[ -~]{0,40} HTTP/1\.1", line)) and len(line) < 40
+    # empty path ("NOTIFY  HTTP/1.1") is printable ASCII only: nothing leaked
+    empty_path = bool(re.fullmatch(rb"NOTIFY +HTTP/1\.1", line))
     if not data:
         print("verdict: no NOTIFY received (firewall on this PC? UPnP events off?)")
     elif clean:
         print("verdict: request line is clean (normal)")
+    elif empty_path:
+        print("verdict: request line has an empty path, no foreign bytes -> OOB-04 NOT demonstrated")
     else:
         print("verdict: *** request line contains unexpected bytes (read beyond the callback string) ***")
 
